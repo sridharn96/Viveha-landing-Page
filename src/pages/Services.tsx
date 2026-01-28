@@ -114,7 +114,7 @@ const Services = () => {
       <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-info/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-up opacity-0" style={{ animationDelay: '800ms' }}>
-            <div className="bg-gradient-to-r from-card via-card to-primary/5 border border-primary/20 rounded-3xl p-6 md:p-8 lg:p-10 max-w-6xl mx-auto shadow-2xl relative overflow-hidden backdrop-blur-sm">
+            <div className="bg-gradient-to-r from-card via-card to-primary/5 border border-primary/20 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 max-w-6xl mx-auto shadow-2xl relative overflow-hidden backdrop-blur-sm">
               {/* Background decorative elements */}
               <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl" />
               <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-info/20 to-transparent rounded-full blur-3xl" />
@@ -130,18 +130,16 @@ const Services = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <div className="flex flex-col gap-4 justify-center items-center">
                   <Link to="/contact">
-                    <Button size="lg" className="bg-gradient-to-r from-primary to-info hover:from-primary/90 hover:to-info/90 text-primary-foreground btn-shadow rounded-full h-14 px-8 text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                      <MessageCircle className="mr-3 w-6 h-6" />
+                    <Button size="lg" className="bg-gradient-to-r from-primary to-info hover:from-primary/90 hover:to-info/90 text-primary-foreground btn-shadow rounded-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
+                      <MessageCircle className="mr-2 sm:mr-3 w-5 h-5 sm:w-6 sm:h-6" />
                       Start Your Free Trial
                     </Button>
                   </Link>
-                
                 </div>
 
-                {/* Feature highlights */}
-              
+
               </div>
             </div>
           </div>

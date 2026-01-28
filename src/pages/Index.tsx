@@ -62,7 +62,7 @@ const Index = () => {
       <section className="gradient-hero py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            <div className="lg:col-span-7 space-y-8 ml-8 lg:ml-16">
+            <div className="lg:col-span-7 space-y-6 lg:space-y-8 lg:ml-16">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-coral-light text-primary px-4 py-2 rounded-full text-sm font-medium animate-fade-up opacity-0" style={{ animationDelay: "100ms" }}>
                 <span>NEW: AI-Powered Tax Filing</span>
@@ -70,7 +70,7 @@ const Index = () => {
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight animate-fade-up opacity-0" style={{ animationDelay: "200ms" }}>
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight animate-fade-up opacity-0" style={{ animationDelay: "200ms" }}>
                 The ultimate tool for{" "}
                 <span className="font-serif-italic text-primary relative inline-block">
                   effortless
@@ -83,15 +83,15 @@ const Index = () => {
               </h1>
 
               {/* Description */}
-              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-up opacity-0" style={{ animationDelay: "300ms" }}>
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-up opacity-0" style={{ animationDelay: "300ms" }}>
                 Viveha.ai simplifies your business operations with automated invoicing, real-time inventory tracking, and seamless payment collection. Built for modern businesses.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4 animate-fade-up opacity-0" style={{ animationDelay: "400ms" }}>
+              <div className="flex flex-col sm:flex-row flex-wrap items-center gap-4 animate-fade-up opacity-0" style={{ animationDelay: "400ms" }}>
                 <Link to="/contact">
-                  <Button size="lg" className="h-14 px-8 text-lg bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
-                    Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
+                  <Button size="lg" className="h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30 w-full sm:w-auto">
+                    Start Free Trial <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                   </Button>
                 </Link>
 
@@ -139,7 +139,7 @@ const Index = () => {
           {/* CTA */}
           <div className="text-center mt-12 animate-fade-up opacity-0" style={{ animationDelay: '600ms' }}>
             <Link to="/contact">
-              <Button size="lg" className="bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full px-8 h-12 text-lg hover:scale-105 transition-transform duration-300">
+              <Button size="lg" className="bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full px-6 sm:px-8 h-12 text-base sm:text-lg hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Get Started Now
               </Button>
             </Link>

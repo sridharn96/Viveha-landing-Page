@@ -4,22 +4,22 @@ import { Facebook, Instagram, Globe } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-navy text-muted-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Brand */}
-          <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-3">
+          <div className="space-y-3 sm:space-y-4">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3">
               <img
                 src="/isaii logo.jpeg"
                 alt="isaii.ai Logo"
-                className="w-8 h-8 object-contain"
+                className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
               />
-              <span className="font-semibold text-lg text-card">isaii.ai</span>
+              <span className="font-semibold text-base sm:text-lg text-card">isaii.ai</span>
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed hidden sm:block">
               Empowering businesses with smart billing, real-time inventory tracking, and seamless payment management.
             </p>
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-3 pt-1 sm:pt-2">
               <a href="#" className="hover:text-card transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
@@ -32,43 +32,21 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Product */}
-          <div>
-            <h4 className="font-semibold text-card mb-4">Product</h4>
-            <ul className="space-y-3">
-              <li><Link to="/features" className="text-sm hover:text-card transition-colors">Features</Link></li>
-              <li><Link to="/pricing" className="text-sm hover:text-card transition-colors">Pricing</Link></li>
-              <li><Link to="/services" className="text-sm hover:text-card transition-colors">Inventory</Link></li>
-              <li><Link to="/services" className="text-sm hover:text-card transition-colors">Billing</Link></li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="font-semibold text-card mb-4">Company</h4>
-            <ul className="space-y-3">
-              <li><Link to="/about" className="text-sm hover:text-card transition-colors">About Us</Link></li>
-              <li><Link to="/careers" className="text-sm hover:text-card transition-colors">Careers</Link></li>
-              <li><Link to="/privacy" className="text-sm hover:text-card transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-sm hover:text-card transition-colors">Terms of Service</Link></li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-card mb-4">Contact</h4>
-            <ul className="space-y-3">
-              <li className="text-sm">✉️ support@viveha.ai</li>
-              <li className="text-sm">📞 +91 98765 43210</li>
+            <h4 className="font-semibold text-card mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              <li className="text-xs sm:text-sm">✉️ support@viveha.ai</li>
+              <li className="text-xs sm:text-sm">📞 +91 98765 43210</li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-muted-foreground/20 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm">© 2026 viveha.ai. All rights reserved.</p>
+        <div className="border-t border-muted-foreground/20 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs sm:text-sm">© 2026 viveha.ai. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-success"></span>
-            <span className="text-sm">All systems operational</span>
+            <span className="text-xs sm:text-sm">All systems operational</span>
           </div>
         </div>
       </div>

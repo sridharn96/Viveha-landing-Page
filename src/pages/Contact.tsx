@@ -1,13 +1,74 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, Headphones, Send } from "lucide-react";
+import { Mail, Phone, Headphones, Send, CheckCircle, AlertCircle } from "lucide-react";
 import supportAgent from "@/assets/support-agent.png";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    address: "",
+    inquiry: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
+
+  try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbzDVnIDklQZ_bDaMf_r-wsERYWP4D3JUnwZg8RO5Xtfm0-bC39ktnkZK00rvRvMTqPo/exec",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+        }),
+      }
+    );
+
+    const result = await response.json();
+
+    if (result.status === "success") {
+      setSubmitStatus("success");
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        address: "",
+        inquiry: "",
+        message: "",
+      });
+    } else {
+      throw new Error("Submission failed");
+    }
+  } catch (error) {
+    console.error("Form submission error:", error);
+    setSubmitStatus("error");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
   return (
     <Layout>
       {/* Hero */}
@@ -28,23 +89,29 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
             <div className="bg-card rounded-2xl p-8 card-shadow">
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="fullName" className="text-sm font-medium">Full Name</Label>
-                    <Input 
-                      id="fullName" 
-                      placeholder="John Doe" 
+                    <Input
+                      id="fullName"
+                      placeholder="John Doe"
                       className="bg-background"
+                      value={formData.fullName}
+                      onChange={(e) => handleInputChange('fullName', e.target.value)}
+                      required
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-sm font-medium">Email Address</Label>
-                    <Input 
-                      id="email" 
+                    <Input
+                      id="email"
                       type="email"
-                      placeholder="john@example.com" 
+                      placeholder="john@example.com"
                       className="bg-background"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      required
                     />
                   </div>
                 </div>
@@ -55,6 +122,8 @@ const Contact = () => {
                     id="phone"
                     placeholder="+91 98765 43210"
                     className="bg-background"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
                   />
                 </div>
 
@@ -64,12 +133,14 @@ const Contact = () => {
                     id="address"
                     placeholder="Your full address..."
                     className="bg-background min-h-[80px] resize-none"
+                    value={formData.address}
+                    onChange={(e) => handleInputChange('address', e.target.value)}
                   />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="inquiry" className="text-sm font-medium">What are you looking for?</Label>
-                  <Select>
+                  <Select value={formData.inquiry} onValueChange={(value) => handleInputChange('inquiry', value)}>
                     <SelectTrigger className="bg-background">
                       <SelectValue placeholder="Billing System Inquiry" />
                     </SelectTrigger>
@@ -85,16 +156,47 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-sm font-medium">Message</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="How can we help you?" 
+                  <Textarea
+                    id="message"
+                    placeholder="How can we help you?"
                     className="bg-background min-h-[120px] resize-none"
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    required
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow">
-                  Send Message <Send className="ml-2 w-4 h-4" />
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      Sending... <div className="ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Message <Send className="ml-2 w-4 h-4" />
+                    </>
+                  )}
                 </Button>
+
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="flex items-center gap-2 text-success bg-success/10 p-3 rounded-lg">
+                    <CheckCircle className="w-5 h-5" />
+                    <span className="text-sm">Message sent successfully! We'll get back to you soon.</span>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-2 text-destructive bg-destructive/10 p-3 rounded-lg">
+                    <AlertCircle className="w-5 h-5" />
+                    <span className="text-sm">Failed to send message. Please try again or contact us directly.</span>
+                  </div>
+                )}
               </form>
             </div>
 
@@ -133,10 +235,10 @@ const Contact = () => {
               </div>
 
               {/* Support Agent Illustration */}
-              <div className="bg-teal-bg rounded-2xl p-6 relative overflow-hidden min-h-[300px]">
-                <img 
-                  src={supportAgent} 
-                  alt="Customer Support" 
+              <div className="bg-teal-bg rounded-2xl p-6 relative overflow-hidden min-h-[300px] hidden sm:block">
+                <img
+                  src={supportAgent}
+                  alt="Customer Support"
                   className="w-full h-full object-contain"
                 />
                 {/* System Online Badge */}

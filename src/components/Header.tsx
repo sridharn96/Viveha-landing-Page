@@ -57,7 +57,7 @@ const Header = () => {
             <Link to="/contact">
               <Button
                 size="sm"
-                className="bg-primary hover:bg-coral-dark text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/40 transform hover:-translate-y-0.5 transition-all duration-300 rounded-full px-6 font-semibold"
+                className="bg-primary hover:bg-coral-dark text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/40 transform hover:-translate-y-0.5 transition-all duration-300 rounded-full px-4 sm:px-6 font-semibold"
               >
                 Get Started
               </Button>
@@ -96,7 +96,7 @@ const Header = () => {
             ))}
             <div className="pt-2">
               <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full bg-primary hover:bg-coral-dark text-primary-foreground rounded-xl">
+                <Button className="w-full bg-primary hover:bg-coral-dark text-primary-foreground rounded-xl py-3">
                   Get Started
                 </Button>
               </Link>
