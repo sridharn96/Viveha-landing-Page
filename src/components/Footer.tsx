@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Globe } from "lucide-react";
+import { Instagram, Globe, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-navy text-muted-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="container mx-auto pl-12 pr-3 sm:pl-16 sm:pr-4 lg:pl-20 lg:pr-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Brand */}
           <div className="space-y-3 sm:space-y-4">
@@ -20,13 +20,16 @@ const Footer = () => {
               Empowering businesses with smart billing, real-time inventory tracking, and seamless payment management.
             </p>
             <div className="flex items-center gap-3 pt-1 sm:pt-2">
-              <a href="#" className="hover:text-card transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a href="mailto:connect@isaii.in" className="hover:text-card transition-colors">
+                <Mail className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-card transition-colors">
+              <a href="https://www.instagram.com/isaii.ai?igsh=OWd2YjY2aXpsaXBo" target="_blank" rel="noopener noreferrer" className="hover:text-card transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-card transition-colors">
+              <a href="https://www.linkedin.com/company/isaii/" target="_blank" rel="noopener noreferrer" className="hover:text-card transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://www.isaii.in/" target="_blank" rel="noopener noreferrer" className="hover:text-card transition-colors">
                 <Globe className="w-5 h-5" />
               </a>
             </div>
@@ -36,8 +39,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-card mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
             <ul className="space-y-2 sm:space-y-3">
-              <li className="text-xs sm:text-sm">✉️ support@viveha.ai</li>
-              <li className="text-xs sm:text-sm">📞 +91 98765 43210</li>
+              <li className="text-xs sm:text-sm">✉️ connect@isaii.in</li>
+              <li className="text-xs sm:text-sm">📞 +91 90036 72804</li>
             </ul>
           </div>
         </div>

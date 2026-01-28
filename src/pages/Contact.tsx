@@ -95,7 +95,7 @@ const Contact = () => {
                     <Label htmlFor="fullName" className="text-sm font-medium">Full Name</Label>
                     <Input
                       id="fullName"
-                      placeholder="John Doe"
+                      
                       className="bg-background"
                       value={formData.fullName}
                       onChange={(e) => handleInputChange('fullName', e.target.value)}
@@ -107,7 +107,7 @@ const Contact = () => {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="john@example.com"
+                      
                       className="bg-background"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
@@ -120,7 +120,7 @@ const Contact = () => {
                   <Label htmlFor="phone" className="text-sm font-medium">Phone Number</Label>
                   <Input
                     id="phone"
-                    placeholder="+91 98765 43210"
+                    
                     className="bg-background"
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
@@ -222,7 +222,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-info" />
                   </div>
                   <h4 className="font-semibold text-foreground mb-1">Email Us</h4>
-                  <p className="text-sm text-muted-foreground">support@viveha.ai</p>
+                  <p className="text-sm text-muted-foreground">connect@isaii.in</p>
                 </div>
 
                 <div className="bg-card rounded-xl p-5 card-shadow">
@@ -230,7 +230,7 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <h4 className="font-semibold text-foreground mb-1">Call Us</h4>
-                  <p className="text-sm text-muted-foreground">+91 (800) 123-4567</p>
+                  <p className="text-sm text-muted-foreground">+91 90036 72804</p>
                 </div>
               </div>
 
