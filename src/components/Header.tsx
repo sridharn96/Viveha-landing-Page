@@ -54,7 +54,7 @@ const Header = () => {
           {/* Right side */}
           <div className="flex items-center gap-3">
             {/* CTA Button */}
-            <Link to="/register">
+            <Link to="/contact">
               <Button
                 size="sm"
                 className="bg-primary hover:bg-coral-dark text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/40 transform hover:-translate-y-0.5 transition-all duration-300 rounded-full px-6 font-semibold"
@@ -95,7 +95,7 @@ const Header = () => {
               </Link>
             ))}
             <div className="pt-2">
-              <Link to="/register" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="w-full bg-primary hover:bg-coral-dark text-primary-foreground rounded-xl">
                   Get Started
                 </Button>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -88,9 +89,11 @@ const Index = () => {
 
               {/* CTAs */}
               <div className="flex flex-wrap items-center gap-4 animate-fade-up opacity-0" style={{ animationDelay: "400ms" }}>
-                <Button size="lg" className="h-14 px-8 text-lg bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
-                  Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Link to="/contact">
+                  <Button size="lg" className="h-14 px-8 text-lg bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
+                    Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
 
               </div>
 
@@ -135,9 +138,11 @@ const Index = () => {
 
           {/* CTA */}
           <div className="text-center mt-12 animate-fade-up opacity-0" style={{ animationDelay: '600ms' }}>
-            <Button size="lg" className="bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full px-8 h-12 text-lg hover:scale-105 transition-transform duration-300">
-              Get Started Now
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full px-8 h-12 text-lg hover:scale-105 transition-transform duration-300">
+                Get Started Now
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

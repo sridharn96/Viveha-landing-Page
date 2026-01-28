@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { CreditCard, FileText, Users, Package, ArrowRight, MessageCircle } from "lucide-react";
@@ -130,10 +131,12 @@ const Services = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-info hover:from-primary/90 hover:to-info/90 text-primary-foreground btn-shadow rounded-full h-14 px-8 text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    <MessageCircle className="mr-3 w-6 h-6" />
-                    Start Your Free Trial
-                  </Button>
+                  <Link to="/contact">
+                    <Button size="lg" className="bg-gradient-to-r from-primary to-info hover:from-primary/90 hover:to-info/90 text-primary-foreground btn-shadow rounded-full h-14 px-8 text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                      <MessageCircle className="mr-3 w-6 h-6" />
+                      Start Your Free Trial
+                    </Button>
+                  </Link>
                 
                 </div>
 
