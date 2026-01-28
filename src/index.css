@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 4 90% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 4 90% 58%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --coral: 4 90% 58%;
+    --coral-light: 4 90% 95%;
+    --coral-dark: 4 85% 50%;
+    --navy: 222 47% 11%;
+    --navy-light: 220 9% 46%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 217 91% 60%;
+    --teal: 168 76% 42%;
+    --teal-bg: 168 50% 90%;
+
+    /* Gradients */
+    --gradient-coral: linear-gradient(135deg, hsl(4, 90%, 58%) 0%, hsl(15, 90%, 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220, 20%, 97%) 0%, hsl(0, 0%, 100%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 hsl(220 9% 46% / 0.1), 0 1px 2px -1px hsl(220 9% 46% / 0.1);
+    --shadow-card-hover: 0 10px 15px -3px hsl(220 9% 46% / 0.1), 0 4px 6px -4px hsl(220 9% 46% / 0.1);
+    --shadow-button: 0 4px 14px 0 hsl(4 90% 58% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 4 90% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 4 90% 58%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-serif-italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+}
+
+@layer components {
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-shadow-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .btn-shadow {
+    box-shadow: var(--shadow-button);
+  }
+
+  .gradient-coral {
+    background: var(--gradient-coral);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-lg supports-[backdrop-filter]:bg-white/40;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 3s infinite;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(4, 144, 258, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px 0 rgba(4, 144, 258, 0.2);
+    }
+  }
+}
