@@ -132,7 +132,7 @@ const Services = () => {
 
                 <div className="flex flex-col gap-4 justify-center items-center">
                   <Link to="/contact">
-                    <Button size="lg" className="bg-gradient-to-r from-primary to-info hover:from-primary/90 hover:to-info/90 text-primary-foreground btn-shadow rounded-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
+                    <Button size="lg" className="bg-primary hover:bg-coral-dark text-primary-foreground btn-shadow rounded-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
                       <MessageCircle className="mr-2 sm:mr-3 w-5 h-5 sm:w-6 sm:h-6" />
                       Start Your Free Trial
                     </Button>
